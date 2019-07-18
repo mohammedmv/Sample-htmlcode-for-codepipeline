@@ -1,6 +1,14 @@
 version: 0.2
 
 phases:
+  install:
+    runtime-versions:
+      java: openjdk8
   build:
     commands:
-       - mvn package
+      - java -version
+      - mvn package
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'target/my-sample-html-app'
